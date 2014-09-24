@@ -12,7 +12,9 @@ namespace _1_3
         {
             do
             {
-                ReadSalaries(ReadInt(Properties.Resources.Pay_Count));
+                MyExtensions calc = new MyExtensions();
+               int[] value = ReadSalaries(ReadInt(Properties.Resources.Pay_Count));
+               calc.Median(value);
             } while (IsContinuing());
         }
         static int ReadInt(string prompt)

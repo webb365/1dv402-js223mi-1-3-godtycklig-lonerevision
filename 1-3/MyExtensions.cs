@@ -6,16 +6,19 @@ using System.Threading.Tasks;
 
 namespace _1_3
 {
-    class MyExtensions
+    public class MyExtensions
     {
-        int Dispertion(int[] source){
+        public int Dispertion(int[] source){
             return (source.Min() - source.Max());
         }
-        int Median(int[] source)
+        public int Median(int[] source)
         {
-
-
-            throw new Exception();
+            int[] copy = source;
+            Array.Sort(copy);
+            if (copy.GetLength(0) % 2 != 0)
+                return copy[copy.GetLength(0) / 2];
+            else
+                return (( (copy[copy.GetLength(0) / 2]-1) + (copy[copy.GetLength(0) / 2]) ) / 2 );
         }
     }
 }
